@@ -833,7 +833,7 @@ get firstSingFutPerPass(){
       return this.second.slice(0,-3) + "ēbaris";
      } else if (this.second.slice(-3,) == "iri"){
       return this.second.slice(0,-3) + "iēbaris";
-    } else if (this.first.slice(-2,) == "ior" && this.second.slice(-1,) == "i"){
+    } else if (this.first.slice(-3,) == "ior" && this.second.slice(-1,) == "i"){
       return this.second.slice(0,-1) + "iēbaris";
     } else if (this.second.slice(-1,) == "i"){
       return this.second.slice(0,-1) + "ēbaris";
@@ -862,7 +862,7 @@ get firstSingFutPerPass(){
       return this.second.slice(0,-3) + "ēberis";
     } else if (this.second.slice(-3,) == "iri"){
       return this.second.slice(0,-3) + "iēris";
-    } else if (this.first.slice(-2,) == "ior" && this.second.slice(-1,) == "i"){
+    } else if (this.first.slice(-3,) == "ior" && this.second.slice(-1,) == "i"){
       return this.second.slice(0,-1) + "iēris";
     } else if (this.second.slice(-1,) == "i"){
       return this.second.slice(0,-1) + "ēris";
@@ -931,7 +931,7 @@ get secondSingFutPerPass(){
    }
 
    futPerPassSecondSingTrans(){
-     return "You will have " +  this.verbed;
+     return "You will have " +  this.ppVerb;
    }
 
   
@@ -3279,7 +3279,9 @@ function shuffle(array){
     ranNoun2 = new Noun(array[1][0], array[1][1], array[1][2], array[1][3], array[1][4]);
     newVerb = new Verb(newVerbArray[0][0],newVerbArray[0][1],newVerbArray[0][2],newVerbArray[0][3],newVerbArray[0][4],newVerbArray[0][5],newVerbArray[0][6],newVerbArray[0][7]);
 
-    var deponentWordList = [["conor", "conari", "conatus", "try", "trying", "tried", "tried"],["hortor", "hortari", "hortatus", "encourage", "encouraging", "encouraged", "encouraged"],["loquor", "loqui", "locutus", "speak", "speaking", "spoke", "spoken"],["moror", "morari", "moratus","delay","delaying","delayed","delayed"],["proficiscor","proficisci","profectus","set out","setting out","set out","set out"],["vertor","verti","versus","turn","turning","turned","turned"],["patior","pati","passus","suffer","suffering","suffered","suffered"],["loquor", "loqui", "locutus", "speak", "speaking", "spoke", "spoken"],["sequor","sequi","secutus","follow","following","followed","followed"],["miror","mirari","miratus","wonder at","wondering at","wondered at","wondered at"],["experior", "experiri", "expertus", "test", "testing", "tested", "tested"],["orior","oriri","ortus","rise","rising","rose","risen"],["potior","potiri","potitus","gain possession of","gaining possession of","gained possession of","gained possession of"],["progredior","progredi","progressus","advance","advancing","advanced","advanced"],["consequor", "consequi", "consecutus", "catch up to", "catching up to", "caught up to", "caught up to"],["adipiscor","adipisci","adeptus","obtain","obtaining","obtained","obtained"],["fruor","frui","fructus","enjoy","enjoying","enjoyed","enjoyed"],["fungor", "fungi", "functus", "perform", "performing", "performed", "performed"],["nitor","niti","nisus","strive","striving","strove","striven"],["utor", "uti", "usus", "use", "using", "used", "used"],["vescor", "vesci", "vescus","feed on","feeding on","fed on","fed on"],["aggredior","aggredi","aggressus","approach","approaching","approached","approached"],["ingredior", "ingredi", "ingressus", "enter", "entering", "entered", "entered"],["progredior", "progredi", "progressus", "advance", "advancing", "advanced", "advanced"],["regredior","regredi","regressus","go back","going back","went back","gone back"],["videor","vidēri","visus","seem","seeming","seemed","seemed"],["fateor","fatēri","fassus","admit","admitting","admitted","admitted"],["confiteor", "confitēri", "confessus", "confess", "confessing", "confessed", "confessed"]];
+    var deponentWordList = [["patior","pati","passus","suffer","suffering","suffered","suffered"],["conor", "conari", "conatus", "try", "trying", "tried", "tried"],["loquor", "loqui", "locutus", "speak", "speaking", "spoke", "spoken"],["moror", "morari", "moratus","delay","delaying","delayed","delayed"],["proficiscor","proficisci","profectus","set out","setting out","set out","set out"],["sequor","sequi","secutus","follow","following","followed","followed"],["ingredior", "ingredi", "ingressus", "enter", "entering", "entered", "entered"],["regredior","regredi","regressus","go back","going back","went back","gone back"],["egredior","egredi","egressus","leave","leaving","left","left"]];
+
+    //var deponentWordList = [["conor", "conari", "conatus", "try", "trying", "tried", "tried"],["hortor", "hortari", "hortatus", "encourage", "encouraging", "encouraged", "encouraged"],["loquor", "loqui", "locutus", "speak", "speaking", "spoke", "spoken"],["moror", "morari", "moratus","delay","delaying","delayed","delayed"],["proficiscor","proficisci","profectus","set out","setting out","set out","set out"],["vertor","verti","versus","turn","turning","turned","turned"],["patior","pati","passus","suffer","suffering","suffered","suffered"],["loquor", "loqui", "locutus", "speak", "speaking", "spoke", "spoken"],["sequor","sequi","secutus","follow","following","followed","followed"],["miror","mirari","miratus","wonder at","wondering at","wondered at","wondered at"],["experior", "experiri", "expertus", "test", "testing", "tested", "tested"],["orior","oriri","ortus","rise","rising","rose","risen"],["potior","potiri","potitus","gain possession of","gaining possession of","gained possession of","gained possession of"],["progredior","progredi","progressus","advance","advancing","advanced","advanced"],["consequor", "consequi", "consecutus", "catch up to", "catching up to", "caught up to", "caught up to"],["adipiscor","adipisci","adeptus","obtain","obtaining","obtained","obtained"],["fruor","frui","fructus","enjoy","enjoying","enjoyed","enjoyed"],["fungor", "fungi", "functus", "perform", "performing", "performed", "performed"],["nitor","niti","nisus","strive","striving","strove","striven"],["utor", "uti", "usus", "use", "using", "used", "used"],["vescor", "vesci", "vescus","feed on","feeding on","fed on","fed on"],["aggredior","aggredi","aggressus","approach","approaching","approached","approached"],["ingredior", "ingredi", "ingressus", "enter", "entering", "entered", "entered"],["progredior", "progredi", "progressus", "advance", "advancing", "advanced", "advanced"],["regredior","regredi","regressus","go back","going back","went back","gone back"],["videor","vidēri","visus","seem","seeming","seemed","seemed"],["fateor","fatēri","fassus","admit","admitting","admitted","admitted"],["confiteor", "confitēri", "confessus", "confess", "confessing", "confessed", "confessed"]];
 
     var wordList = [["amo", "amare", "amavi","amatus", "love", "loving", "loved", "loved"],["laudo", "laudare", "laudavi","laudatus", "praise", "praising", "praised", "praised"],["observo", "observare", "observavi","observatus", "observe", "observing", "observed", "observed"],["paro", "parare", "paravi","paratus", "prepare", "preparing", "prepared", "prepared"],["specto", "spectare", "spectavi","spectatus", "look at", "looking at", "looked at", "looked at"],["moveo", "movēre", "movi","motus", "move", "moving", "moved", "moved"],["moneo", "monēre", "monui","monitus", "warn", "warning", "warned", "warned"],["teneo", "tenēre", "tenui","tentus", "hold", "holding", "held", "held"],["terreo", "terrēre", "terrui","territus", "frighten", "frightening", "frightened", "frightened"],["duco", "ducere", "duxi","ductus", "lead", "leading", "led", "led"],["frango", "frangere", "frēgi","fractus", "break", "breaking", "broke", "broken"],["mitto", "mittere", "mīsi","missus", "send", "sending", "sent", "sent"],["capio", "capere", "cēpi","captus", "capture", "capturing", "captured", "captured"],["facio", "facere", "fēci","factus", "make", "making", "made", "made"],["audio", "audire", "audivi","auditus", "hear", "hearing","heard","heard"],["voco", "vocare", "vocavi","vocatus", "call", "calling", "called", "called"],["video", "vidēre", "vīdi","visus", "see", "seeing", "saw", "seen"]];
             
@@ -3432,15 +3434,16 @@ console.log(ranVerb.presFirstSing());
     //load questions here
     questions = [
       {
-      question:  Object.values(ranPassiveVerbArray3[0])[0].toUpperCase() + " =  __________________",
-      choices: [Object.values(ranPassiveVerbArray3[1])[1], Object.values(ranPassiveVerbArray3[2])[1], Object.values(ranPassiveVerbArray3[3])[1], Object.values(ranPassiveVerbArray3[0])[1]],
-      answer: Object.values(ranPassiveVerbArray3[0])[0].toUpperCase() + " = " + Object.values(ranPassiveVerbArray3[0])[1].toUpperCase(),
-      },
-      {
       question:  Object.values(ranPassiveVerbArray6[0])[0].toUpperCase() + " =  __________________",
       choices: [Object.values(ranPassiveVerbArray6[1])[1], Object.values(ranPassiveVerbArray6[2])[1], Object.values(ranPassiveVerbArray6[3])[1], Object.values(ranPassiveVerbArray6[0])[1]],
       answer: Object.values(ranPassiveVerbArray6[0])[0].toUpperCase() + " = " + Object.values(ranPassiveVerbArray6[0])[1].toUpperCase(),
       },
+      {
+      question:  Object.values(ranPassiveVerbArray3[0])[0].toUpperCase() + " =  __________________",
+      choices: [Object.values(ranPassiveVerbArray3[1])[1], Object.values(ranPassiveVerbArray3[2])[1], Object.values(ranPassiveVerbArray3[3])[1], Object.values(ranPassiveVerbArray3[0])[1]],
+      answer: Object.values(ranPassiveVerbArray3[0])[0].toUpperCase() + " = " + Object.values(ranPassiveVerbArray3[0])[1].toUpperCase(),
+      },
+      
       {
       question:  Object.values(ranPassiveVerbArray5[0])[0].toUpperCase() + " =  __________________",
       choices: [Object.values(ranPassiveVerbArray5[1])[1], Object.values(ranPassiveVerbArray5[2])[1], Object.values(ranPassiveVerbArray5[3])[1], Object.values(ranPassiveVerbArray5[0])[1]],
